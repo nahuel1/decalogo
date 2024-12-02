@@ -1,3 +1,4 @@
+/* Estilo general */
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #e3f2fd, #ffffff 70%);
@@ -26,6 +27,11 @@ main {
     min-width: 1200px; /* Asegura el contenido horizontal */
 }
 
+h1 {
+    font-size: 2rem;
+    color: #01579b; /* Azul más oscuro para el título */
+}
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -45,11 +51,48 @@ li {
     min-width: 1100px; /* Ancho por defecto para asegurar desbordamiento */
 }
 
+li:hover {
+    transform: scale(1.03);
+    background-color: #90caf9; /* Celeste más intenso al pasar el mouse */
+}
+
+/* Estilo para elementos seleccionados */
+li.selected {
+    background-color: #64b5f6; /* Celeste destacado */
+    color: white;
+    font-weight: bold;
+    border-left: 5px solid #01579b; /* Azul más oscuro para el borde */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    transform: scale(1.05); /* Ligeramente más grande */
+}
+
+/* Resplandor temporal al hacer clic */
+.highlight {
+    box-shadow: 0 0 15px rgba(255, 223, 0, 0.8); /* Resplandor dorado */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Estilo del pie de página */
 footer {
     text-align: center;
     padding: 10px 0;
-    background-color: #0288d1;
+    background-color: #0288d1; /* Igual que el encabezado */
     color: white;
     margin-top: 20px;
     min-width: 1200px; /* Asegura que el pie sea tan ancho como el contenido */
+}
+
+/* Sol en el fondo */
+body::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #FFD700 60%, transparent 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 50px 20px rgba(255, 215, 0, 0.5); /* Brillo del sol */
+    z-index: -1; /* Detrás del contenido */
 }
